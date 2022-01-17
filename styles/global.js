@@ -10,8 +10,8 @@ export  const global = StyleSheet.create({
         marginHorizontal:10,
     },
     titleText:{
-        borderColor:'#072227',
-        borderWidth:1,
+        // borderColor:'#072227',
+        // borderWidth:1,
         textAlign:'center',
         fontSize:25,
         fontFamily:'Poppins-Regular',
@@ -24,3 +24,13 @@ export  const global = StyleSheet.create({
         fontSize:18,
     }
 });
+
+export const images = {
+    ratings:{
+        '1': require('../assets/rating-1.png'),
+        '2': require('../assets/rating-2.png'),
+        '3': require('../assets/rating-3.png'),
+        '4': require('../assets/rating-4.png'),
+        '5': require('../assets/rating-5.png'),
+    }
+}

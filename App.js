@@ -5,7 +5,9 @@ import ReviewDetails from "./Screen/reviewDetails";
 import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Header from "./shared/Header";
+import React from "react";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -19,16 +21,18 @@ export default function App() {
       <Stack.Navigator initialRouteName="Home"
          screenOptions={{ headerStyle: {
           backgroundColor: '#eee',
+          
         },
         headerTintColor: '#000',
         headerTitleStyle: {
           fontWeight: 'bold',
-         
+          fontSize:25,
         },}}
       >
-        <Stack.Screen name="Home" component={Home} options={ {title: 'My home',}}/>   
+        <Stack.Screen name="Home" component={Home} options={ {headerTitle: ()=> <Header/>,}}/>   
         <Stack.Screen name="Review" component={ReviewDetails} options={({route})=>({title:route.params.title})} />
       </Stack.Navigator>
+      
     </NavigationContainer>
   );
 }
